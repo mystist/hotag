@@ -1,6 +1,7 @@
 {
   "asi": true,
   "curly": false,
+  "devel": true,
   "eqeqeq": false,
   "immed": false,
   "latedef": true,
@@ -9,7 +10,7 @@
   "sub": true,
   "strict": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "boss": true,
   "eqnull": true,
   "browser": true,

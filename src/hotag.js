@@ -13,11 +13,26 @@
     this.$element = $(element)
     this.options = $.extend({}, Hotag.DEFAULTS, options)
     
+    this.initContainer()
   }
   
   Hotag.VERSION = '0.0.1'
   
-  Hotag.DEFAULTS = {}
+  Hotag.DEFAULTS = {
+    containerCss: {
+      'width': '100%',
+      'height': '100%'
+    }
+  }
+  
+  Hotag.prototype.initContainer = function () {
+    var $container = $('<div />')
+        .css(this.options.containerCss)
+        .appendTo(this.$element)
+        
+    // To be continue...
+    
+  }
   
   function Plugin(option) {
     return this.each(function () {
