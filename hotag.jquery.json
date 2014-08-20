@@ -1,0 +1,28 @@
+{
+  "name": "hotag",
+  "title": "Awesome jQuery plugin",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": {
+    "name": "",
+    "url": "https://github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}

@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>demo</title>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/src/hotag.js"></script>
+    <style>
+      .container {
+        width: 250px;
+        height: 300px;
+        border: 1px solid #eeeeee;
+        margin: 50px;
+        padding: 0 10px;
+      }
+      .font {
+        font-family: arial,helvetica,clean,sans-serif;
+        font-size: 13px;
+        font-weight: normal
+      }
+      .container a {
+        color: #0099d2;
+        text-decoration: none;
+      }
+      .container a:hover {
+        text-decoration: underline;
+      }
+      .container .head {
+        font-size: 14px;
+        border-bottom: 1px solid #c5c5c5;
+      }
+      .tag-normal, .tag-min {
+        font-size: 100%;
+      }
+      .tag1 {
+        font-size: 120%;
+      }
+      .tag2 {
+        font-size: 140%;
+      }
+      .tag3 {
+        font-size: 160%;
+      }
+      .tag4 {
+        font-size: 180%;
+      }
+      .tag5 {
+        font-size: 200%;
+      }
+      .tag6 {
+        font-size: 220%;
+      }
+      .tag7 {
+        font-size: 240%;
+      }
+      .tag8 {
+        font-size: 260%;
+      }
+      .tag9 {
+        font-size: 280%;
+      }
+      .tag-max {
+        font-size: 300%
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container font">
+      <div class="head">
+        <p>Hot Tags</p>
+      </div>
+      <div class="body">
+        <a href="#" class="tag-normal">link</a>
+        <a href="#" class="tag1">link</a>
+        <a href="#" class="tag2">link</a>
+        <a href="#" class="tag3">link</a>
+        <a href="#" class="tag4">link</a>
+        <a href="#" class="tag5">link</a>
+        <a href="#" class="tag6">link</a>
+        <a href="#" class="tag7">link</a>
+        <a href="#" class="tag8">link</a>
+        <a href="#" class="tag9">link</a>
+        <a href="#" class="tag-max">link</a>        
+      </div>
+    </div>
+    
+  </body>
+  
+  <script>
+    $(".container").hotag('init');
+  </script>
+  
+</html>
