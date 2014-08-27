@@ -15,5 +15,6 @@
   "eqnull": true,
   "browser": true,
   "expr": true,
+  "scripturl": true,
   "predef": ["jQuery"]
 }
