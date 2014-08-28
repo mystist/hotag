@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Smart show your hot tags, similar with tag cloud.",
   "keywords": [
-    "tag", "hot tag", "tag cloud"
+    "hotag", "tag", "cloud", "tagcloud"
   ],
   "homepage": "https://github.com/Mystist/hotag",
   "author": {

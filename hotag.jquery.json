@@ -23,6 +23,6 @@
     "jquery": ">= 1.9.0"
   },
   "keywords": [
-    "tag", "hot tag", "tag cloud"
+    "hotag", "tag", "cloud", "tagcloud"
   ]
 }
