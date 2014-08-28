@@ -16,7 +16,7 @@
     this.initialize()
   }
   
-  Hotag.VERSION = '0.0.1'
+  Hotag.VERSION = '0.0.4'
   
   Hotag.DEFAULTS = {
     tags: [],
