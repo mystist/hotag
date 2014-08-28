@@ -1,16 +1,16 @@
 {
   "name": "hotag",
-  "title": "Awesome jQuery plugin",
-  "description": "The best jQuery plugin ever.",
+  "title": "Hot Tag",
+  "description": "Smart show your hot tags, similar with tag cloud.",
   "version": "0.0.1",
-  "homepage": "",
+  "homepage": "https://github.com/Mystist/hotag",
   "author": {
-    "name": "",
-    "url": "https://github.com/"
+    "name": "Mystist",
+    "url": "mystist.github.com"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Mystist/hotag.git"
   },
   "bugs": "",
   "licenses": [
@@ -20,9 +20,9 @@
     }
   ],
   "dependencies": {
-    "jquery": "latest"
+    "jquery": ">= 1.9.0"
   },
   "keywords": [
-    "jquery-plugin"
+    "tag", "hot tag", "tag cloud"
   ]
 }
