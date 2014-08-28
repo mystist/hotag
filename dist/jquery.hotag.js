@@ -1,4 +1,4 @@
-/*! hotag - v0.0.1 - 2014-08-28
+/*! hotag - v0.0.4 - 2014-08-28
 * https://github.com/Mystist/hotag
 * Copyright (c) 2014 Mystist; Licensed MIT */
 +function ($) {
@@ -11,7 +11,7 @@
     this.initialize()
   }
   
-  Hotag.VERSION = '0.0.1'
+  Hotag.VERSION = '0.0.4'
   
   Hotag.DEFAULTS = {
     tags: [],
