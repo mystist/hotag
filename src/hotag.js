@@ -90,7 +90,7 @@
     }
   }
   
-  // Only for test suite purpose.
+  // For test suite purpose only.
   Hotag._private = {
     utils: utils,
     helper: helper
