@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>demo</title>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/src/hotag.js"></script>
+    
+    <style>
+      .container {
+        width: 100%;
+        border: 1px solid #eeeeee;
+        padding: 0 10px;
+        float: left;
+        margin: 10px;
+      }
+    </style>
+    
+    <style>
+      .hotag-container {
+        width: 100%;
+        font-family: arial,helvetica,clean,sans-serif;
+        font-size: 13px;
+        font-weight: normal;
+        padding: 10px 0;
+        float: left;
+      }
+      .hotag-container a {
+        margin: 5px 3px;
+        color: #0099d2;
+        text-decoration: none;
+        float: left;
+      }
+      .hotag-container a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    
+    
+  </head>
+  <body>
+    
+    <div id="main" class="container" style="width: 130px; height: 200px;">
+    </div>
+    <div id="main2" class="container" style="width: 300px; height: 200px;">
+    </div>
+    <div id="main3" class="container" style="width: 200px; height: 200px;">
+    </div>
+    <div id="main4" class="container" style="width: 90px; height: 200px;">
+    </div>
+    
+  </body>
+  
+  <script>
+    var tags = [{"counts":1,"tag":"balabala"},{"counts":1,"tag":"liber"},{"counts":1,"tag":"ranking"},{"counts":2,"tag":"slash"},{"counts":2,"tag":"slide"},{"counts":1,"tag":"tag"}];
+    var tags2 = [{"counts":12,"tag":"balabala"},{"counts":4,"tag":"liber"},{"counts":3,"tag":"ranking"},{"counts":11,"tag":"slash"},{"counts":8,"tag":"slide"},{"counts":5,"tag":"tag"}];
+    var tags3 = [{"counts":23,"tag":"balabala"},{"counts":1,"tag":"liber"},{"counts":13,"tag":"ranking"},{"counts":4,"tag":"slash"},{"counts":2,"tag":"slide"},{"counts":3,"tag":"tag"}];
+    var tags4 = [{"counts":1,"tag":"balabala"},{"counts":1,"tag":"liber"},{"counts":1,"tag":"ranking"},{"counts":1,"tag":"slash"},{"counts":200,"tag":"slide"},{"counts":180,"tag":"tag"}];
+    $("#main").hotag({
+      tags: tags
+    });
+    $("#main2").hotag({
+      tags: tags2
+    });
+    $("#main3").hotag({
+      tags: tags3
+    });
+    $("#main4").hotag({
+      tags: tags4
+    });
+  </script>
+  
+</html>
