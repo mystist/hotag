@@ -1,4 +1,4 @@
-/*! hotag - v0.0.4 - 2014-08-28
+/*! hotag - v0.0.5 - 2014-09-03
 * https://github.com/Mystist/hotag
 * Copyright (c) 2014 Mystist; Licensed MIT */
 +function ($) {
@@ -11,14 +11,16 @@
     this.initialize()
   }
   
-  Hotag.VERSION = '0.0.4'
+  Hotag.VERSION = '0.0.5'
   
   Hotag.DEFAULTS = {
     tags: [],
     keyOfName: 'tag',
     keyOfCounts: 'counts',
     keyOfHref: 'href',
-    containerClass: 'hotag-container'
+    containerClass: 'hotag-container',
+    minFontByPercent: 100,
+    maxFontByPercent: 230
   }
   
   Hotag.prototype.initialize = function () {
@@ -43,9 +45,9 @@
       var tag = tags[i]
       var $tag = $('<a />')
         .text(tag[this.options.keyOfName])
-        .attr('href', tag[this.options.keyOfHref] || 'javascript:;')
+        .attr('href', tag[this.options.keyOfHref] || '#')
         .css('font-size', utils.calPoints.call(this, tag[this.options.keyOfCounts], m) + '%')
-      $target.append($tag)
+      $target.append(' ').append($tag)
     }
     return this
   }
@@ -60,10 +62,10 @@
       return arr
     },
     calPoints: function (counts, m) {
-      var minFont = 100
-      var addition = 200
+      var minFont = this.options.minFontByPercent
+      var maxFont = this.options.maxFontByPercent
       var coef = helper.log(counts / m.min, m.max / m.min) // Divide m.min to let the `counts` start from 1. 
-      return minFont + parseFloat(coef.toFixed(2), 10) * addition
+      return minFont + parseFloat(coef.toFixed(2), 10) * (maxFont - minFont)
     }
   }
   

@@ -60,11 +60,15 @@ In your web page:
  
 ### Options
 
+Options defaults to beblow:  
+
 ```javascript
 tags: [], // Data source. Example: `tags: [{"theCounts":12,"tagName":"balabala", "src": "http://balabala.com"}]`
 keyOfName: 'tag', // Example: `tagName`. See at above, we use tagName there.
 keyOfCounts: 'counts', // Example: `theCounts`.
 keyOfHref: 'href', // Example: `src`
 containerClass: 'hotag-container' // Use this to customize your owe CSS.
+minFontByPercent: 100, // Fonts is based on your css set to the container.
+maxFontByPercent: 230  
 ```
 
