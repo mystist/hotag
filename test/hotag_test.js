@@ -64,8 +64,10 @@
   })
   
   test('shoud calcuate points', function () {
-    strictEqual(this.utils.calPoints(1, {mmax: 10, min: 1}), 100)
-    strictEqual(this.utils.calPoints(10, {mmax: 10, min: 1}), 300)
+    var minFont = this.hotag.options.minFontByPercent
+    var maxFont = this.hotag.options.maxFontByPercent
+    strictEqual(this.utils.calPoints.call(this.hotag, 1, {max: 10, min: 1}), minFont)
+    strictEqual(this.utils.calPoints.call(this.hotag, 10, {max: 10, min: 1}), maxFont)
   })
   
   module('helper', {

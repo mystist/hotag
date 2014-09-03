@@ -22,6 +22,8 @@
         font-weight: normal;
         padding: 10px 0;
         float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .hotag-container a {
         margin: 5px 3px;
@@ -34,17 +36,42 @@
       }
     </style>
     
+    <style>
+      .tag-cloud-container {
+        width: 100%;
+        font-family: arial,helvetica,clean,sans-serif;
+        font-size: 13px;
+        font-weight: normal;
+        padding: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .tag-cloud-container a {
+        margin: 3px 6px;
+        color: #0099d2;
+        text-decoration: none;
+      }
+      .tag-cloud-container a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    
     
   </head>
   <body>
     
-    <div id="main" class="container" style="width: 130px; height: 200px;">
+    <div id="main" class="container" style="width: 130px;">
     </div>
-    <div id="main2" class="container" style="width: 300px; height: 200px;">
+    <div id="main2" class="container" style="width: 350px;">
     </div>
-    <div id="main3" class="container" style="width: 200px; height: 200px;">
+    <div id="main3" class="container" style="width: 250px;">
     </div>
-    <div id="main4" class="container" style="width: 90px; height: 200px;">
+    <div id="main4" class="container" style="width: 90px;">
+    </div>
+
+    <div id="main5" class="container" style="width: 350px;">
+    </div>
+    <div id="main6" class="container" style="width: 350px;">
     </div>
     
   </body>
@@ -66,6 +93,17 @@
     $("#main4").hotag({
       tags: tags4
     });
+    
+    var tags5 = [{"tag":"don't_come","counts":2},{"tag":"fine","counts":5},{"tag":"home","counts":1},{"tag":"mars","counts":4},{"tag":"name","counts":6},{"tag":"ramdom","counts":7},{"tag":"stay","counts":2},{"tag":"stay_at_home","counts":3},{"tag":"stuff","counts":5},{"tag":"the_roof","counts":3},{"tag":"ux","counts":5},{"tag":"vvvvvvvvvvvvvvvvvvvv","counts":1},{"tag":"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv","counts":2}];
+    $("#main5").hotag({
+      tags: tags5,
+      containerClass: 'tag-cloud-container'
+    });
+    $("#main6").hotag({
+      tags: tags5,
+      containerClass: 'hotag-container'
+    });
+    
   </script>
   
 </html>
