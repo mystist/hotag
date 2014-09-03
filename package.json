@@ -1,6 +1,6 @@
 {
   "name": "hotag",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Smart show your hot tags, similar with tag cloud.",
   "keywords": [
     "hotag", "tag", "cloud", "tagcloud"

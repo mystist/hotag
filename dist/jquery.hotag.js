@@ -1,4 +1,4 @@
-/*! hotag - v0.0.5 - 2014-09-03
+/*! hotag - v0.0.6 - 2014-09-03
 * https://github.com/Mystist/hotag
 * Copyright (c) 2014 Mystist; Licensed MIT */
 +function ($) {
@@ -11,7 +11,7 @@
     this.initialize()
   }
   
-  Hotag.VERSION = '0.0.5'
+  Hotag.VERSION = '0.0.6'
   
   Hotag.DEFAULTS = {
     tags: [],
@@ -45,7 +45,10 @@
       var tag = tags[i]
       var $tag = $('<a />')
         .text(tag[this.options.keyOfName])
-        .attr('href', tag[this.options.keyOfHref] || '#')
+        .attr({
+          'href': tag[this.options.keyOfHref] || '#',
+          'title': this.options.keyOfCounts + ': ' + tag[this.options.keyOfCounts]
+        })
         .css('font-size', utils.calPoints.call(this, tag[this.options.keyOfCounts], m) + '%')
       $target.append(' ').append($tag)
     }
