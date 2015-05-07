@@ -1,18 +1,18 @@
-/*! hotag - v0.0.6 - 2014-09-03
+/*! hotag - v0.0.7 - 2015-05-07
 * https://github.com/Mystist/hotag
-* Copyright (c) 2014 Mystist; Licensed MIT */
+* Copyright (c) 2015 Mystist; Licensed MIT */
 +function ($) {
   'use strict';
-  
+
   var Hotag = function (element, options) {
     this.$element = $(element)
     this.options = $.extend({}, Hotag.DEFAULTS, options)
-    
+
     this.initialize()
   }
-  
-  Hotag.VERSION = '0.0.6'
-  
+
+  Hotag.VERSION = '0.0.7'
+
   Hotag.DEFAULTS = {
     tags: [],
     keyOfName: 'tag',
@@ -22,26 +22,26 @@
     minFontByPercent: 100,
     maxFontByPercent: 230
   }
-  
+
   Hotag.prototype.initialize = function () {
     this.initContainer()
       .render()
   }
-  
+
   Hotag.prototype.initContainer = function () {
     var $container = $('<div />')
       .addClass(this.options.containerClass)
       .appendTo(this.$element)
     return this
   }
-  
+
   Hotag.prototype.render = function () {
     var tags = this.options.tags
     var $target = this.$element.find('.' + this.options.containerClass)
-    
+
     var m = helper.m(utils.getArr.call(this))
-    
-    for(var i = 0, l = tags.length; i < l; i++) {
+
+    for (var i = 0, l = tags.length; i < l; i++) {
       var tag = tags[i]
       var $tag = $('<a />')
         .text(tag[this.options.keyOfName])
@@ -54,12 +54,18 @@
     }
     return this
   }
-  
+
+  Hotag.prototype.destroy = function () {
+    this.$element
+      .empty()
+      .removeData('mystist.hotag')
+  }
+
   var utils = {
     getArr: function() {
       var arr = []
       var tags = this.options.tags
-      for(var i =0, l = tags.length; i < l; i++) {
+      for (var i = 0, l = tags.length; i < l; i++) {
         arr.push(tags[i][this.options.keyOfCounts])
       }
       return arr
@@ -67,20 +73,16 @@
     calPoints: function (counts, m) {
       var minFont = this.options.minFontByPercent
       var maxFont = this.options.maxFontByPercent
-      var coef = helper.log(counts / m.min, m.max / m.min) // Divide m.min to let the `counts` start from 1. 
+      var coef = helper.log(counts / m.min, m.max / m.min) // Divide m.min to let the `counts` start from 1.
       return minFont + parseFloat(coef.toFixed(2), 10) * (maxFont - minFont)
     }
   }
-  
+
   var helper = {
     m: function (arr) {
       var m = {
-        max: -Infinity,
-        min: Infinity
-      }
-      for(var i = 0, l = arr.length; i < l; i++) {
-        if(arr[i] > m.max) m.max = arr[i]
-        if(arr[i] < m.min) m.min = arr[i]
+        max: Math.max.apply(null, arr),
+        min: Math.min.apply(null, arr)
       }
       return m
     },
@@ -89,28 +91,30 @@
       return Math.log(n) / Math.log(base)
     }
   }
-  
+
   // For test suite purpose only.
   Hotag._private = {
     utils: utils,
     helper: helper
   }
-  
+
   function Plugin(option) {
     return this.each(function () {
       var $this = $(this)
       var data = $this.data('mystist.hotag')
       var options = typeof option == 'object' && option
-      
-      if(!data) $this.data('mystist.hotag', (data = new Hotag(this, options)))
+
+      if (data && typeof option != 'string') data = null || data.destroy()
+      if (!data) $this.data('mystist.hotag', (data = new Hotag(this, options)))
+      if (typeof option == 'string') data[option]()
     })
   }
-  
+
   var old = $.fn.hotag
-  
+
   $.fn.hotag = Plugin
   $.fn.hotag.Constructor = Hotag
-  
+
   $.fn.hotag.noConflict = function () {
     $.fn.hotag = old
     return this
