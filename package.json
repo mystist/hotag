@@ -1,6 +1,6 @@
 {
   "name": "hotag",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Smart show your hot tags, similar with tag cloud.",
   "keywords": [
     "hotag", "tag", "cloud", "tagcloud"
@@ -8,7 +8,7 @@
   "homepage": "https://github.com/Mystist/hotag",
   "author": {
     "name": "Mystist",
-    "email": "gjl87910lq@hotmail.com",
+    "email": "gjl87910lq@gmail.com",
     "url": "mystist.github.com"
   },
   "repository": {

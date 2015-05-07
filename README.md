@@ -49,7 +49,7 @@ In your web page:
 
 ## Documentation
 
-### Get started  
+### Getting started  
  - Install `Nodejs` on your computer. Make sure `bower --version`, `grunt --version` returns properly. If not, run `npm install -g grunt-cli bower`.
  - [Download the latest source code](https://github.com/Mystist/hotag/releases).
  - Run `npm install`, `bower install` to install devDependencies.
