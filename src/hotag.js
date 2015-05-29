@@ -16,7 +16,7 @@
     this.initialize()
   }
 
-  Hotag.VERSION = '0.0.7'
+  Hotag.VERSION = '0.0.8'
 
   Hotag.DEFAULTS = {
     tags: [],
@@ -64,6 +64,8 @@
     this.$element
       .empty()
       .removeData('mystist.hotag')
+
+    return this
   }
 
   var utils = {
@@ -109,7 +111,7 @@
       var data = $this.data('mystist.hotag')
       var options = typeof option == 'object' && option
 
-      if (data && typeof option != 'string') data = null || data.destroy()
+      if (data && typeof option != 'string') data.destroy() && (data = null)
       if (!data) $this.data('mystist.hotag', (data = new Hotag(this, options)))
       if (typeof option == 'string') data[option]()
     })
